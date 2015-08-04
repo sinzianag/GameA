@@ -15,6 +15,8 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 import android.graphics.SweepGradient;
 import android.os.Build;
+import android.os.CountDownTimer;
+import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -836,6 +838,7 @@ public class GameCanvas extends ViewGroup {
             setLayerToSW(this);
         }
 
+
         @Override
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
@@ -1001,6 +1004,32 @@ public class GameCanvas extends ViewGroup {
         float sign = Math.signum(dot);
 
         return l * sign;
+    }
+
+
+    //------------------------------------------------------------------------
+
+    private int currentItem = 0;
+
+    public void fire(){
+        this.addItem("Ganymede", 3, Color.BLUE);
+    }
+
+    public void startSpin(){
+        CountDownTimer timer = new CountDownTimer(30000, 1) {
+        int rotate = 0;
+        public void onTick(long millisUntilFinished) {
+            if(rotate > 360)
+                rotate = rotate - 360;
+            setPieRotation(rotate++);
+            rotate+=2;
+
+        }
+
+         public void onFinish() {
+        }
+    }.start();
+
     }
 
 

@@ -14,22 +14,23 @@ public class GameActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game2);
 
         Resources res = getResources();
 
         setContentView(R.layout.activity_game2);
         final GameCanvas pie = (GameCanvas) this.findViewById(R.id.pie);
-        pie.addItem("Agamemnon", 2, res.getColor(R.color.seafoam));
-        pie.addItem("Bocephus", 3.5f, res.getColor(R.color.chartreuse));
-        pie.addItem("Calliope", 2.5f, res.getColor(R.color.emerald));
+        pie.addItem("Agamemnon", 3, res.getColor(R.color.seafoam));
+        pie.addItem("Bocephus", 3, res.getColor(R.color.chartreuse));
+        pie.addItem("Calliope", 3, res.getColor(R.color.emerald));
         pie.addItem("Daedalus", 3, res.getColor(R.color.bluegrass));
-        pie.addItem("Euripides", 1, res.getColor(R.color.turquoise));
+        pie.addItem("Euripides", 3, res.getColor(R.color.turquoise));
         pie.addItem("Ganymede", 3, res.getColor(R.color.slate));
+
+        pie.startSpin();
 
         ((Button) findViewById(R.id.button2)).setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                pie.setCurrentItem(0);
+                pie.fire();
             }
         });
     }
