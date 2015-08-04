@@ -49,8 +49,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/ball"
-        android:paddingLeft="80dp"
-        android:paddingTop="45dp"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
         android:src="@drawable/ball" />
 
     <ImageView
@@ -73,6 +73,15 @@
 
     <ImageView
         android:id="@+id/ball7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ball"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:src="@drawable/ball" />
+
+    <ImageView
+        android:id="@+id/ball8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/ball"
